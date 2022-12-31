@@ -1,0 +1,121 @@
+\section{数学公式}
+\begin{frame}[fragile]
+    \frametitle{数学模式}
+    \begin{itemize}
+        \item<+-> 一切数学公式都要在数学模式下输入
+            \begin{itemize}
+                \item 不受外界字体命令控制
+                \item 数学模式中空格不起作用
+                \item 始终调用 \pkg{amsmath} 宏包
+            \end{itemize}
+        \item<+-> 行内公式
+            \begin{itemize}
+                \item 用一对美元符号：\verb|$...$|
+                \item \verb|$pV=nRT$| $\to$ $pV=nRT$
+            \end{itemize}
+        \item<+-> 行间公式
+            \begin{itemize}
+                \item 无编号：\verb|\[...\]| 或 \verb|equation*| 环境
+                \item 编号：\verb|equation| 环境
+                \item \textcolor{tip}{不推荐用 \texttt{\$\$...\$\$}}
+            \end{itemize}
+        \item<+-> 偷个懒
+            \begin{itemize}
+                \item Mathpix 截图识别 \link{https://mathpix.com/}
+                \item 不建议完全依赖，需要氪金。
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{结构}
+    \begin{itemize}
+        \item<+-> 上、下标
+            \begin{itemize}
+                \item \verb|^| 和 \verb|_|：\verb|f^ab| 和 \verb|f^{ab}|，\verb|{e^x}^2| 和 \verb|e^{x^2}|
+                \item 配合积分、求和、极限使用：\verb|\int|、\verb|\sum|、\verb|\lim|
+            \end{itemize}
+        \item<+-> 分式
+            \begin{itemize}
+                \item \verb|\frac{<分子>}{<分母>}|
+                \item 行内分式、小分式不好看：改用 \verb|a/b|，或改用独显公式\verb|\displaystyle|
+            \end{itemize}
+        \item<+-> 根式
+            \begin{itemize}
+                \item \verb|\sqrt[<次数>]{<内容>}|
+                \item 复杂情况改用分数指数：\verb|{...}^{1/n}|
+            \end{itemize}
+        \item<+-> 矩阵与行列式
+            \begin{itemize}
+                \item \verb|matrix|、\verb|pmatrix|、\verb|vmatrix| 等环境
+                \item 语法类似表格：\verb|&| 分列，\verb|\\| 换行
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{括号与定界符}
+    \begin{itemize}
+        \item<+-> 基本括号
+            \begin{itemize}
+                \item \verb|(...)|、\verb|[...]|、\verb|\{...\}|、
+                \item 绝对值：\lstinline+|...|+
+            \end{itemize}
+        \item<+-> 自动调节
+            \begin{itemize}
+                \item \verb|\left(...\right)|、\verb|\left[...\right]|、\verb|\left{...\right}|
+                \item \pkg{physics}宏包的 \verb|\qty| 命令
+            \end{itemize}
+        \item<+-> 手动调节
+            \begin{itemize}
+                \item \verb|\big|、\verb|\Big|、\verb|\bigg|、\verb|\Bigg|
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{符号与字体}
+    \begin{itemize}
+        \item 寻找符号
+              \begin{itemize}
+                  \item 最常用的额外字体包：\pkg{amssymb}
+                  \item \LaTeX{}编辑器和插件提供常见符号命令
+              \end{itemize}
+        \item 数学字体
+              \begin{itemize}
+                  \item 被广泛使用的「Times New Roman」：\pkg{newtxmath} 宏包
+                  \item 加粗：使用 \pkg{bm} 宏包的 \verb|\bm| 命令
+              \end{itemize}
+        \item 新方案：\pkg{unicode-math}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{多行公式}
+    \begin{itemize}
+        \item 以下均要求 \pkg{amsmath} 宏包
+        \item 独立数学环境
+              \begin{itemize}
+                  \item \verb|align| 环境，\verb|&| 加在需要对齐处
+              \end{itemize}
+        \item 内联数学环境
+              \begin{itemize}
+                  \item 条件 \verb|cases|、多行对齐 \verb|split|
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{V个公式，看看实力}
+    \small
+    \begin{equation*}
+        \displaystyle \oint_{L_1}^{L_2}\mathcal{D}[x(t)]\sqrt{\frac{\displaystyle3\pi^2-\sum_{q=0}^{\infty}(z+\hat L)^{q}\exp(iq^2 \hbar x)}{\displaystyle \prod_{m=0}^{\infty}\left(\bm{\Lambda}_{j_1j_2}^{i_1i_2}\Gamma_{i_1i_2}^{j_1j_2}\hookrightarrow\vec D\cdot \mathbf{P}  \right)}}
+        ={\widetilde{\left\langle \frac{\notin \emptyset}{\varpi\alpha_{k\uparrow}}\middle\vert \frac{\partial_\mu T_{\mu\nu}}{2}\right\rangle}},\forall z \in \mathbb{R}
+    \end{equation*}
+    \scriptsize
+    \begin{lstlisting}
+\begin{equation}
+    \displaystyle \oint_{L_1}^{L_2}\mathcal{D}[x(t)]\sqrt{\frac{\displaystyle 3\pi^2-\sum_{q=0}^{\infty}(z+\hat L)^{q}\exp(iq^2 \hbar x)}{\displaystyle \prod_{m=0}^{\infty}\left(\bm{\Lambda}_{j_1j_2}^{i_1i_2}\Gamma_{i_1i_2}^{j_1j_2}\hookrightarrow\vec D\cdot \mathbf{P} \right)}}={\widetilde{\left\langle \frac{\notin \emptyset}{\varpi\alpha_{k\uparrow}}\middle\vert\frac{\partial_\mu T_{\mu\nu}}{2}\right\rangle}},\forall z \in \mathbb{R}
+\end{equation}
+    \end{lstlisting}
+\end{frame}

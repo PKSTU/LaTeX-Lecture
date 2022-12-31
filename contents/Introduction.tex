@@ -1,0 +1,88 @@
+\begin{frame}[standout]
+  \huge 提前声明 \\[1ex]
+  \footnotesize 本次讲座主要针对彭康学导团真题整理工作，无法介绍\LaTeX{}全貌
+\end{frame}
+
+\section{简单介绍}
+
+\begin{frame}{什么是\LaTeX ？}
+  \begin{itemize}
+    \item \TeX 是由Donald E. Knuth为排版文字和数学公式而开发的软件。
+    \item \LaTeX 是一种使用\TeX 程序作为排版引擎的格式，可以粗略地理解为\LaTeX 是\TeX 的一层封装，由Leslie Lamport开发。
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=2.8cm]{figures/Knuth-vivian20181019E.jpg}
+        \caption{Donald E. Knuth（\TeX）}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=2.8cm]{figures/lamport-2018.jpg}
+        \caption{Leslie Lamport（\LaTeX）}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  \nonumberfootnote{\scriptsize 图片来源：
+    \link{https://www-cs-faculty.stanford.edu/~knuth/graphics.html}
+    \link{https://aperiodical.com/2018/09/hlf-blogs-leslie-lamport-thinks-your-code-is-bad}}
+\end{frame}
+
+\begin{frame}{\LaTeX~or~Word ?}
+  \begin{itemize}
+    \item \LaTeX
+          \begin{itemize}
+            \item 所想即所得（学习门槛高，想要看到效果需要频繁编译）
+            \item 内容和格式分离（格式的调整不太方便）
+            \item 强大的数学公式排版（不容易排查错误）
+            \item 开源、免费（维护问题）
+          \end{itemize}
+    \item Word
+          \begin{itemize}
+            \item 所见即所得（下限低，繁多的标记语言）
+            \item 内容和格式混合（难以全身心投入内容创作）
+            \item 数学公式兼容性一般（容易造成卡顿）
+            \item 收费
+          \end{itemize}
+  \end{itemize}
+  \textcolor{tip}{想法比工具更重要！}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{举个简单的例子}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \scriptsize
+      \begin{lstlisting}
+\documentclass{ctexart}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\title{彭康学导团\LaTeX 讲座测试}
+\author{彭康学导团志愿者部}
+\date{\zhtoday}
+\maketitle
+\section{测试第一节}
+你好，\LaTeX ！
+\[
+f(q)=-\frac{m}{2\pi\hbar^2}\int V(r){\rm e}^{iqr/\hbar}{\rm d}r
+\]
+\section{测试第二节}
+\begin{enumerate}
+  \item 这是第一点
+  \item 这是第二点
+\end{enumerate}
+\end{document}
+  \end{lstlisting}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \vspace{-0.8cm}
+        \includegraphics[width=\textwidth]{figures/test1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

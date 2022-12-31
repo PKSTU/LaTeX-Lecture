@@ -1,0 +1,51 @@
+\documentclass{ctexbeamer}
+\usetheme{metropolis}
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setCJKsansfont{方正清刻本悦宋简体.ttf}
+\setsansfont{Palatino}
+\setmonofont{Consolas}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{comment}{RGB}{0,166,82}
+\definecolor{keyword}{RGB}{0,174,247}
+\definecolor{tip}{RGB}{244,105,102}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{listings} % 代码美化包
+\lstset{
+	language=[latex]TeX, breaklines, basicstyle=\ttfamily,
+	keywordstyle = \bfseries\color{keyword},
+	commentstyle = \color{comment},
+	texcsstyle=*\color{keyword}\bfseries
+}
+\usepackage{multicol}
+\usepackage{fontawesome5}
+\newcommand\link[1]{\href{#1}{\faLink}}
+\newcommand\pkg[1]{\it\texttt{#1}}
+\newcommand\CASE[1]{{\addfontfeatures{Letters=Uppercase}#1}}
+\setbeamertemplate{bibliography item}[text]
+
+\begin{document}
+% xelatex --synctex=1 Lecture.tex
+\title{\LaTeX 从入门到入门}
+\date{\today}
+\author{彭康学导团志愿者部}
+\institute{彭康书院学业辅导与发展中心}
+\titlegraphic{\hfill\includegraphics[height=2cm]{figures/logo.png}}
+\maketitle
+
+\input{contents/Introduction.tex}
+\input{contents/PKSTU.tex}
+\input{contents/Usage.tex}
+\input{contents/Start.tex}
+\input{contents/Equation.tex}
+\input{contents/Templates.tex}
+\input{contents/Reference.tex}
+\input{contents/About.tex}
+\input{contents/Bye.tex}
+
+\end{document}
